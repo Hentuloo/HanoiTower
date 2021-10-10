@@ -1,11 +1,9 @@
 import { HanoiElement, HanoiTower } from "../types";
 
-type t = HanoiTower;
-
-export const getFirst = (tower: t): HanoiElement | null => tower[0] || null;
-export const addAsFirst = (tower: t, element: HanoiElement): t => [element, ...tower];
-export const removeFirst = (tower: t): HanoiTower => tower.slice(1);
-export const isItemValidToMove = (from: t, to: t): boolean => {
+export const getFirst = (tower: HanoiTower): HanoiElement | null => tower[0] || null;
+export const addAsFirst = (tower: HanoiTower, element: HanoiElement): HanoiTower => [element, ...tower];
+export const removeFirst = (tower: HanoiTower): HanoiTower => tower.slice(1);
+export const isItemValidToMove = (from: HanoiTower, to: HanoiTower): boolean => {
     const firstInOldTower = getFirst(from);
     const firstInNewTower = getFirst(to) || Infinity;
 
